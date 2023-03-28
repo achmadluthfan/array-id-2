@@ -1,0 +1,701 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --top: 80px;
+    --menuHeight:55vh;
+    --textColor: #eaeaea;
+    --mobileHeadingFontSize: 2.9rem;
+    --tabletHeadingFontSize: 3rem;
+    --dekstopHeadingFontSize:3.5rem;
+}
+
+p,a,li,h1,h2,h3,h4{
+    color: var(--textColor);
+}
+h1,h2 {
+    font-family: 'Volkhov', serif;
+    color: #FEF4F4;
+    font-weight: 700;
+}
+h3 {
+    font-weight: 500;
+    color: #FEF4F4;
+}
+h4 {
+    font-weight: 400;
+}
+p{
+    font-weight: 300;
+    color: #E3E0E0;
+}
+a {
+    text-decoration: none;
+}
+
+/* MAIN SECTION */
+main {
+    background-color: #1A1C22;
+}
+
+main > div {
+    width: 90vw;
+    margin: auto;
+}
+/* NAVBAR SECTION */
+nav {
+    font-weight: 500;
+    height: 80px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav > div {
+    display: flex;
+    width: 100vw;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+nav .menu{
+    position: absolute;
+    top: var(--top);
+    width: 100%;
+    left: 0;
+    height: var(--menuHeight);
+    background-color: #1A1C22;
+    top: -1000px;
+    transition: 1s;
+    z-index: 3;
+}
+
+nav .menu.active {
+    top: var(--top);
+}
+nav .menu ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav .login-language {
+    display: flex;
+    position: absolute;
+    top: calc(var(--top) + var(--menuHeight));
+    justify-content: center;
+    column-gap: 20px;
+    width: 100%;
+    left: 0;
+    top: -1000px;
+    transition: 1s;
+}
+
+nav .login-language.active {
+    top: calc(var(--top) + var(--menuHeight));
+}
+
+nav .language {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+nav .login {
+    height: 48px;
+    width: 117px;
+    background: linear-gradient(96.02deg, #BC0E19 7.77%, #DB202C 91.68%);
+    box-shadow: 0px 5px 25px rgba(192, 30, 41, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    line-height: 48px;
+}
+
+nav .language img {
+    height: min-content;
+}
+
+nav .hamburger {
+    width: 25px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+nav .hamburger div {
+    width: 100%;
+    height: 3px;
+    background-color: #dcdcdc;
+    border-radius: 2px;
+}
+
+nav .hamburger div::before, nav .hamburger div::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: #dcdcdc;
+    left: 0;
+    border-radius: 2px;
+}
+
+nav .hamburger div::after {
+    bottom: 0;
+}
+
+nav .hamburger div::before {
+    top: 0;
+}
+
+nav .hamburger input {
+    height: 30px;
+    width: 30px;
+    left: 0;
+    background-color: transparent;
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+}
+
+nav .hamburger input:checked + div {
+    transform: rotate(45deg);
+}
+
+nav .hamburger input:checked + div::after {
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+/* Hero Section */
+
+section.hero > div {
+    /* width: 90vw; */
+    height: calc(100vh - 110px);
+    margin: auto;
+}
+
+section.hero .title {
+    height: 100%;
+}
+
+section.hero .title > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+section.hero div .title div h1 {
+    font-size: var(--mobileHeadingFontSize);
+    flex: .6;
+    line-height: 1.2;
+}
+
+section.hero div .title div p {
+    font-size: .9rem;
+    text-align: justify;
+}
+
+section.hero div button {
+    width: fit-content;
+    /* align-self: center; */
+}
+
+.hero-image {
+    display: none;
+}
+
+
+button {
+    background: linear-gradient(96.02deg, #BC0E19 7.77%, #DB202C 91.68%);
+    box-shadow: 0px 5px 25px rgba(192, 30, 41, 0.5);
+    padding: 13px 20px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    font-weight: 500;
+    columns: var(--textColor);
+}
+
+/* Feature Section */
+
+section.section-feature {
+    /* width: 90vw; */
+    margin: 100px auto 0;
+}
+
+#feature-title {
+    text-align: center;
+}
+
+section.section-feature #feature {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0;
+}
+
+.feature {
+    width: 320px;
+    /* height: 200px; */
+    background-color: #1F2127;
+    border-radius: 30px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature .description-feature {
+    font-size: .7rem;
+}
+
+.feature img {
+    display: block;
+    margin: auto;
+    height: 50px;
+}
+
+.feature p {
+    flex: 1;
+    line-height: 2;
+}
+
+/* Popular Section */
+section.popular {
+    margin-top: 100px;
+}
+section.popular h2 {
+    text-align: center;
+}
+
+.popular-film-tv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.film-programtv {
+    border: 1px solid #FEF4F4;
+    width: 320px;
+    border-radius: 30px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.film-programtv img {
+    border-radius: 15px;
+}
+
+.film-programtv h3 {
+    margin-top: 17px;
+}
+
+.film-programtv p {
+    font-size: .9rem;
+}
+
+.film-programtv .rate img {
+    height: 25px;
+    /* width: 25px; */
+}
+
+.film-programtv .rate {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+/* Packet Section */
+.offer {
+    margin-top: 100px;
+}
+
+.offer > div {
+    /* width: 90vw; */
+    margin: auto;
+}
+
+.offer h3, .offer h2 {
+    text-align: center;
+}
+
+.offer .packet {
+    border-radius: 30px;
+    height: 600px;
+    margin-top: 50px;
+}
+
+.packet:nth-child(2) {
+    background: linear-gradient(168.02deg, #1F2127 3.06%, #373A43 47.56%, #1F2127 96.94%);
+}
+
+.offer .packet > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.offer .price {
+    color: #DB202C;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+}
+
+span.each-month {
+    color: #FEF4F4;
+    font-weight: 400;
+    font-size: 1rem;
+    
+}
+
+.offer .packet:nth-child(1), .offer .packet:nth-child(3) {
+    background-color: #1F2127;
+}
+
+.obtained {
+    flex: .5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.obtain {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 15px;
+}
+.obtain img {
+    width: 20px;
+}
+
+.unobtain p{
+    font-size: .9rem;
+    color: #ABACAF;
+    margin-left: 30px;
+}
+
+.choose-packet {
+    color: #fff;
+    box-shadow: 0px 0px 0px 0px;
+    border: 1px solid #FEF4F4;
+    border-radius: 15px;
+    width: fit-content;
+    align-self: center;
+    background: transparent;
+}
+
+.packet:nth-child(2) .choose-packet {
+    background: linear-gradient(96.02deg, #BC0E19 7.77%, #DB202C 91.68%);
+    box-shadow: 0px 5px 25px rgba(192, 30, 41, 0.5);
+    border: none;
+}
+
+/* Subscription Section */
+.subscribtion {
+    margin-top: 100px;
+}
+.subscribtion h3{
+    color: #1A1C22;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 25px;
+}
+.subscribtion > div {
+    background-color: #C8CFEC;
+    /* width: 90vw; */
+    margin: auto;
+    border-radius: 30px;
+    padding: 48px 20px;
+    position: relative;
+}
+
+.subscribtion > div > img {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 50px;
+}
+
+.subscribtion input {
+    background-color: #FEF4F4;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+.subscribtion button {
+    color: #FEF4F4;
+}
+
+.subscribtion form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.subscribtion form input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.subscribtion form button {
+    margin: auto;
+}
+
+/* Footer Section */
+.footer {
+    margin-top: 100px;
+}
+
+.footer > div {
+    /* width: 90vw; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 35px;
+    width: auto;
+}
+
+.footer-logo p {
+    font-size: .8rem;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.company, .get-help, .others, .get-app {
+    line-height: 35px;
+}
+
+.get-app {
+    display: flex;
+    flex-direction: column;
+}
+
+.get-app .social-media {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.get-app .social-media img {
+    height: fit-content;
+}
+.get-app .social-media img:nth-child(2) {
+    background: linear-gradient(149.74deg, #BC0E19 7.68%, #DB202C 92.32%);
+    box-shadow: 0px 2px 10px rgba(192, 30, 41, 0.25);
+    padding: 13px;
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 350px){
+    section.hero div .title div h1 {
+        font-size: 2.1rem;
+    }
+
+    section.hero div .title div p {
+        font-size: .7rem;
+    }
+
+    section.hero div .title div button {
+        font-size: .6rem;
+    }
+}
+
+@media only screen and (min-width: 640px){
+    section.hero div .title div h1 {
+        font-size: 3.2rem;
+        line-height: 1.5;
+    }
+
+    section.hero div .title div {
+        height: calc(100vh - 170px)
+    }
+
+    nav > div, section.hero > div {
+        width: 85vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    main > div{
+        width: 95%;
+    }
+    
+    section.hero > div {
+        display: flex;
+        align-items: center;
+        height: fit-content;
+    }
+
+    section.hero .title, section.hero .hero-image {
+        flex: 1;
+    }
+
+    section.hero > div {
+        height: 550px;
+    }
+
+    section.hero > div > div.title {
+        display: flex;
+        align-items: center;
+    }
+
+    section.hero > div .title > div {
+        justify-content: center;
+        gap: 15px;
+        height: fit-content;
+    }
+
+    section.hero div.title > div > h1 {
+        font-size: 2rem;
+        flex: 0;
+    }
+
+    section.hero > div > div.title > div p {
+        font-size: .7rem;
+        letter-spacing: .5px;
+    }
+
+    section.hero > div > div.title > div button {
+        font-size: .7rem;
+    }
+
+    .hero-image {
+        display: block;
+        position: re;
+    }
+
+    .hero-image img {
+        /* height: calc(50vw - 100px);
+        width: 100%; */
+        width: 80%;
+        object-fit: cover;
+        display: block;
+        margin: 0 0 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    nav > div {
+        margin: 40px auto 15px auto;
+    }
+
+    nav .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav .menu, nav .login-language{
+        position: static;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    nav .menu {
+        flex-grow: .2;
+    }
+    
+    nav .menu ul {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: static;
+    }
+
+    nav .hamburger {
+        display: none;
+    }
+
+    section.hero {
+        margin-top: 25px;
+    }
+
+    section.hero > div .title > div {
+        gap: 15px;
+        height: 100%;
+    }
+    section.hero > div .title > div h1 {
+        font-size: 3rem;
+        line-height: 70px;
+    }
+
+    section.hero > div .title > div p {
+        flex: .5;
+        line-height: 24px;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) {
+    section.hero > div .title > div h1 {
+        font-size: 3.5rem;
+    }
+    
+}
+
+@media only screen and (min-width: 1526px) {
+    main > div {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
+
+    
+
+    section.hero .hero-image img {
+        max-width: 70%;
+    }
+
+    /* section.hero > div .title > div {
+        gap: 15px;
+        height: 100%;
+    }
+    section.hero > div .title > div h1 {
+        font-size: 3.5rem;
+        line-height: 70px;
+    }
+
+    section.hero > div .title > div p {
+        flex: .5;
+        line-height: 24px;
+    } */
+}
