@@ -7,7 +7,7 @@
 
 :root {
     --top: 80px;
-    --menuHeight:55vh;
+    --menuHeight:75vh;
     --textColor: #eaeaea;
     --mobileHeadingFontSize: 2.9rem;
     --tabletHeadingFontSize: 3rem;
@@ -70,8 +70,8 @@ nav > div {
 nav .menu{
     position: absolute;
     top: var(--top);
-    width: 100%;
-    left: 0;
+    width: 100vw;
+    left: -40px;
     height: var(--menuHeight);
     background-color: #1A1C22;
     top: -1000px;
@@ -102,9 +102,11 @@ nav .login-language {
     justify-content: center;
     column-gap: 20px;
     width: 100%;
-    left: 0;
+    left: -40px;
+    width: 100vw;
     top: -1000px;
     transition: 1s;
+    background-color: #1A1C22;
 }
 
 nav .login-language.active {
@@ -121,7 +123,7 @@ nav .login {
     height: 48px;
     width: 117px;
     background: linear-gradient(96.02deg, #BC0E19 7.77%, #DB202C 91.68%);
-    box-shadow: 0px 5px 25px rgba(192, 30, 41, 0.5);
+    
     border-radius: 15px;
     text-align: center;
     line-height: 48px;
@@ -650,6 +652,10 @@ span.each-month {
     nav > div {
         margin: 40px auto 15px auto;
     }
+    
+    nav .login {
+        box-shadow: 0px 5px 25px rgba(192, 30, 41, 0.5);
+    }
 
     nav .main-nav {
         display: flex;
@@ -752,8 +758,6 @@ span.each-month {
         max-width: 1700px;
         margin: 0 auto;
     }
-
-    
 
     section.hero .hero-image img {
         max-width: 70%;
