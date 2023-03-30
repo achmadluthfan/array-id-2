@@ -40,7 +40,8 @@ a {
 /* MAIN SECTION */
 main {
     background-color: #1A1C22;
-    height: 3700px;
+    height: auto;
+    padding-bottom: 35px;
 }
 
 main > div {
@@ -521,7 +522,7 @@ span.each-month {
 
 .footer .copyright {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .footer .copyright p {
@@ -531,6 +532,10 @@ span.each-month {
 .footer .copyright > div {
     display: flex;
     column-gap: 15px;
+}
+
+.footer > div:nth-child(2) {
+    margin-top: 20px;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 350px){
@@ -718,9 +723,6 @@ span.each-month {
     }
 
     .footer .copyright {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
         bottom: -50px;
         width: 100%;
     }
